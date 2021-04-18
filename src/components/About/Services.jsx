@@ -1,3 +1,5 @@
+import { Service } from "./Service";
+
 const services = [
     {
         service: "Creative",
@@ -21,7 +23,7 @@ export const Services = () => {
     return (
         <div className="services">
             {services.map(service => (
-                <li>{service}</li>
+                <Service key={service.icon} service={service} />
             ))}
         </div>
     );
