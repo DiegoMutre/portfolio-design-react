@@ -1,4 +1,5 @@
 import ProfileImage from "../../images/john-smith.jpg";
+import "./Hero.css";
 
 export const Hero = () => (
     <section className="section-1 center" id="section-1">
