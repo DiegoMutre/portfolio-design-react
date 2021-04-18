@@ -1,3 +1,5 @@
+import { ProgressBar } from "./ProgressBar";
+
 const skills = [
     {
         technology: "HTML",
@@ -33,8 +35,7 @@ export const ProgressBarsWrapper = () => {
     return (
         <div className="progress-bars-wrapper">
             {skills.map(skill => (
-                // TODO : Show each skill in a component here
-                <li>{JSON.stringify(skill, null, 2)}</li>
+                <ProgressBar key={skill.technology} skill={skill} />
             ))}
         </div>
     );
