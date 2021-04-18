@@ -6,7 +6,7 @@ export const Hero = () => (
         <h1 className="section-1-heading">Web Developer</h1>
         <img src={ProfileImage} alt="John Smith" className="person-img" />
         <h3 className="person-name">John Smith</h3>
-        <a href="section-3" className="section-1-btn">
+        <a href="#section-3" className="section-1-btn">
             Projects
         </a>
     </section>
