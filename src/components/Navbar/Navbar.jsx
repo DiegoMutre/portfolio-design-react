@@ -11,6 +11,22 @@ const addStickyNavbar = (navbar, navbarOffsetRef) => () => {
         navbar.current.classList.remove("sticky");
 };
 
+const checkForSection = () => {
+    const sections = document.querySelectorAll("section");
+    const navbarLinks = document.querySelectorAll(".navbar-link");
+
+    sections.forEach((section, index) => {
+        if (window.pageYOffset >= section.offsetTop) {
+            navbarLinks.forEach(navbarLink => {
+                navbarLink.classList.remove("change");
+            });
+
+            navbarLinks[index].classList.add("change");
+            return;
+        }
+    });
+};
+
 export const Navbar = () => {
     const navbarRef = useRef();
 
@@ -20,9 +36,11 @@ export const Navbar = () => {
             "scroll",
             addStickyNavbar(navbarRef, navbarOffsetRef)
         );
-
-        return () =>
+        window.addEventListener("scroll", checkForSection);
+        return () => {
             window.removeEventListener("scroll", addStickyNavbar(navbarRef));
+            window.removeEventListener("scroll", checkForSection);
+        };
     }, []);
 
     return (
