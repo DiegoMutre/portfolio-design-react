@@ -1,7 +1,9 @@
+import "./Contact.css";
+
 export const Contact = () => {
     return (
         <section className="section-4" id="section-4">
-            <h1 className="section-heading">Contact Me</h1>
+            <h1 className="section-heading section-4-heading">Contact Me</h1>
             <form className="contact-form center">
                 <input type="text" placeholder="Name" />
                 <input type="email" placeholder="Email" />
