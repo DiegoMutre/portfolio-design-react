@@ -5,7 +5,9 @@ export const Project = ({ project }) => {
         <div className="project">
             <div className="project-text">
                 <h2 className="project-name">{project.projectName}</h2>
-                <h4 className="project-technologies">{project.technologies}</h4>
+                <h4 className="project-technologies">
+                    {project.technologies.join(" / ")}
+                </h4>
             </div>
             <img
                 src={project.imageURL}
