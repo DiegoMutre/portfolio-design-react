@@ -16,7 +16,7 @@ const checkForSection = () => {
     const navbarLinks = document.querySelectorAll(".navbar-link");
 
     sections.forEach((section, index) => {
-        if (window.pageYOffset >= section.offsetTop) {
+        if (window.pageYOffset >= section.offsetTop - 10) {
             navbarLinks.forEach(navbarLink => {
                 navbarLink.classList.remove("change");
             });
